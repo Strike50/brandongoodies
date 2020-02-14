@@ -24,7 +24,9 @@ export const Main = () => {
     return (
         <>
             {products.map((product, i) => (
-                <div/>
+                <div key={`product-${i}`}>
+                    <Product data={product} />
+                </div>
             ))}
         </>
     )
