@@ -4,11 +4,18 @@ export const Main = () => {
     const [products, setProducts] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('https://firebase.io//producs.json')
+        fetch('https://brandongoodies-74f91.firebaseio.com/articles.json')
             .then(response => {
                 response.json()
                 .then(json => {
-                    setProducts(json);
+                    const productArray = [];
+                    for (let key in json) {
+                        productArray.push({
+                            ...json[key],
+                            id: key
+                        });
+                    }
+                    setProducts(productArray);
                 })
         });
     }, []);
@@ -16,7 +23,7 @@ export const Main = () => {
     return (
         <>
             {products.map((product, i) => (
-                <Product data={product} key={`product-${i}`} />
+                <div/>
             ))}
         </>
     )
