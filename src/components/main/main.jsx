@@ -1,4 +1,5 @@
 import React from 'react';
+import Product from "../product/product";
 
 export const Main = () => {
     const [products, setProducts] = React.useState([]);
