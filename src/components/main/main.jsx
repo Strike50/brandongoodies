@@ -16,7 +16,7 @@ export const Main = () => {
     return (
         <>
             {products.map((product, i) => (
-                <Product />
+                <Product data={product} key={`product-${i}`} />
             ))}
         </>
     )
